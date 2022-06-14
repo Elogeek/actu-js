@@ -39,7 +39,7 @@ function devConfig() {
                 {
                     test: /\.(png|jpe?g|gif|webp)$/i,
                     type: 'asset/resource',
-                    generator: {filename: 'build/images/[name][ext]'}
+                    generator: {filename: 'build/img/[name][ext]'}
                 },
             ]
         },
