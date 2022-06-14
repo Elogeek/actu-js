@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Megrim&family=Murecho:wght@100;200;500&family=Open+Sans:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gideon+Roman&family=Megrim&family=Murecho:wght@100;200;300;400;500&family=Open+Sans:wght@300&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -10,6 +13,18 @@ HTML {
 
 body {
     font-size: 3rem;
-    background-color: #FAFAFAFF;
+    background-color: white;
     color: #494949FF;
+}
+
+.divArticle-visible h2 {
+    font-family: 'Murecho', sans-serif;
+}
+
+.divArticle p:first-child {
+    font-family: 'Gideon Roman', cursive;
+}
+
+.themeBtn {
+    text-align: center;
 }
