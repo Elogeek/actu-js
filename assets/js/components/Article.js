@@ -31,7 +31,7 @@ class Article {
         }
 
         if(author === null) {
-            author = "Anonyme";
+            author = "Anonymous";
         }
 
         this.title.innerHTML = title;
