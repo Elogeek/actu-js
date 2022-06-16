@@ -27,24 +27,24 @@ class Articles {
             data: {
                 access_key: '6e6daf070179498ad3531d057e9946b0',
                 languages: 'fr,-en',
-                countries: 'ca,fr',
+                countries: 'fr,jp',
                 limit: 20,
                 offset: 20,
             }
         })
             .done(data => {
                 let dataArticles = data.data;
-                dataArticles.sort(function compare(a, b) {
-                    if (a.published_at < b.published_at)
+                dataArticles.sort(function compare(dataA, dataB) {
+                    if (dataA.published_at < dataB.published_at)
                         return -1;
-                    if (a.published_at > b.published_at )
+                    if (dataA.published_at > dataB.published_at )
                         return 1;
                     return 0;
                 }).reverse();
 
-                dataArticles.forEach(function (e) {
+                dataArticles.forEach(function (event) {
                     let article = new Article();
-                    article.init(e.title, e.description, e.author, e.published_at, e.image, e.source);
+                    article.init(event.title, event.description, event.author, event.published_at, event.image, event.source);
                 })
 
                 this.viewArticle();
