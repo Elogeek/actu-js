@@ -5,6 +5,7 @@ class Header {
      */
     constructor() {
         this.logo = document.createElement("img");
+        this.logo.id = "logo";
 
     }
 
@@ -15,9 +16,6 @@ class Header {
     init(divContainer) {
         this.logo.src = "/build/img/logo.png";
         this.logo.className = "Header";
-        this.logo.style.maxWidth = "12%";
-        this.logo.style.margin = "2rem";
-
 
         divContainer.appendChild(this.logo);
     }

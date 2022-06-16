@@ -21,7 +21,6 @@ class Container {
      * Init the container
      */
     init() {
-        this.divContainer.style.cssText = "width: 100%;";
         document.body.appendChild(this.divContainer);
 
         this.header.init(this.divContainer);
