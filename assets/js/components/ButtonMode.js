@@ -1,4 +1,4 @@
-import 'boxicons'
+import {faSun} from "@fortawesome/free-solid-svg-icons";
 
 class ButtonMode {
 
@@ -15,9 +15,8 @@ class ButtonMode {
      * @param divContainer
      */
     init(divContainer) {
-        this.button.style.cssText = "position: absolute; top: 2rem; right: 2rem; width: 50px; height: 50px; background-color: orange; cursor: pointer; border-radius: 2rem; text-align: center;";
-        this.mode.className = 'bx bxs-heart bx-border';
-        //'bx bx-sun';
+        this.button.style.cssText = "position: absolute; top: 2rem; right: 2rem; width: 50px; height: 50px; background-color: black; cursor: pointer; border-radius: 2rem; text-align: center;";
+        this.mode.className = {faSun};
 
         divContainer.appendChild(this.button);
         this.button.appendChild(this.mode);

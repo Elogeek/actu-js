@@ -166,7 +166,7 @@ class Articles {
                     else {
                         if(b.className === "divArticle visible") {
                             b.firstChild.childNodes[2].after(p);
-                            b.className = "divArticle-visible view";
+                            b.className = "divArticle visible view";
                         }
                         else {
                             b.firstChild.childNodes[3].remove();
