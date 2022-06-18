@@ -1,8 +1,7 @@
 import {Header} from "./Header";
 import {Footer} from "./Footer";
 import {Articles} from "./Articles";
-import {ButtonMode} from "./ButtonTheme";
-import {logPlugin} from "@babel/preset-env/lib/debug";
+import {ButtonMode} from "./ButtonMode";
 
 class Container {
 

@@ -1,4 +1,4 @@
-import '@fortawesome/fontawesome-free/js/all.js';
+import 'boxicons'
 
 class ButtonMode {
 
@@ -7,7 +7,7 @@ class ButtonMode {
      */
     constructor() {
         this.button = document.createElement("div");
-        this.mode = document.createElement("button");
+        this.mode = document.createElement("i");
     }
 
     /**
@@ -15,9 +15,10 @@ class ButtonMode {
      * @param divContainer
      */
     init(divContainer) {
-        this.button.style.cssText = "position: absolute; top: 2rem; right: 2rem; width: 50px; height: 50px; background-color: black; cursor: pointer; border-radius: 2rem; text-align: center;";
-        this.mode.className = "themeBtn";
-        this.mode.innerHTML = "<i class=\"fa-solid fa-sun\" style='color: #494949;'></i>";
+        this.button.style.cssText = "position: absolute; top: 2rem; right: 2rem; width: 50px; height: 50px; background-color: orange; cursor: pointer; border-radius: 2rem; text-align: center;";
+        this.mode.className = 'bx bxs-heart bx-border';
+        //'bx bx-sun';
+
         divContainer.appendChild(this.button);
         this.button.appendChild(this.mode);
 
