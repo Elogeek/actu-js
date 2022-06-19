@@ -7,7 +7,7 @@ class ButtonMode {
      */
     constructor() {
         this.button = document.createElement("div");
-        this.modeNigth = document.createElement("i");
+        this.mode = document.createElement("i");
     }
 
     /**
@@ -16,7 +16,8 @@ class ButtonMode {
      */
     init(divContainer) {
         this.button.style.cssText = "position: absolute; top: 2rem; right: 2rem; width: 50px; height: 50px; background-color: black; cursor: pointer; border-radius: 2rem; text-align: center;";
-        this.modeNigth.innerHTML = "<i class=\"fas fa-sun\"></i>";
+        this.mode.innerHTML = "<i class=\"fa-solid fa-palette\"></i>";
+        this.mode.style.color = "white";
 
         divContainer.appendChild(this.button);
         this.button.appendChild(this.mode);
@@ -25,11 +26,12 @@ class ButtonMode {
             if(localStorage.getItem("theme") === "light") {
                 document.body.style.cssText = "font-size: 3rem; background-color: white; color: #494949FF"
                 this.button.style.cssText = "position: absolute; top: 2rem; right: 2rem; width: 50px; height: 50px; background-color: black; cursor: pointer; border-radius: 2rem;";
-
+                this.mode.style.cssText = "margin-top: 9px; display: flex; justify-content: center; align-items: center; align-content: center; color: white;";
             }
             else {
-                document.body.style.cssText = "font-size: 3rem; background-color: #494949FF; color: #FAFAFAFF";
-                this.button.style.cssText = "position: absolute; top: 2rem; right: 2rem; width: 50px; height: 50px; background-color: #FAFAFAFF; cursor: pointer; border-radius: 2rem;";
+                document.body.style.cssText = "font-size: 3rem; background-color: black; color: #FAFAFAFF";
+                this.button.style.cssText = "position: absolute; top: 2rem; right: 2rem; width: 50px; height: 50px; background-color: white; cursor: pointer; border-radius: 2rem;";
+                this.mode.style.cssText = "margin-top: 9px; display: flex; justify-content: center; align-items: center; align-content: center; color: black;";
             }
         }
     }
@@ -41,21 +43,25 @@ class ButtonMode {
         this.button.addEventListener("click", () => {
             console.log("ok");
             if(localStorage.getItem("theme")) {
+                /** Theme light **/
                 if(localStorage.getItem("theme") === "light") {
-                    document.body.style.cssText = "font-size: 3rem; background-color: #494949FF; color: #FAFAFAFF";
-                    this.button.style.cssText = "position: absolute; top: 2rem; right: 2rem; width: 50px; height: 50px; background-color: #FAFAFAFF; cursor: pointer; border-radius: 2rem;";
+                    document.body.style.cssText = "font-size: 3rem; background-color: white; color: black";
+                    this.button.style.cssText = "position: absolute; top: 2rem; right: 2rem; width: 50px; height: 50px; background-color: black; cursor: pointer; border-radius: 2rem;";
+                    this.mode.style.cssText = "margin-top: 9px; display: flex; justify-content: center; align-items: center; align-content: center; color: white;";
                     localStorage.setItem("theme", "dark");
                 }
                 else {
-                    document.body.style.cssText = "font-size: 3rem; background-color: #FAFAFAFF; color: #494949FF";
+                    document.body.style.cssText = "font-size: 3rem; background-color: white; color: #494949FF";
                     this.button.style.cssText = "position: absolute; top: 2rem; right: 2rem; width: 50px; height: 50px; background-color: black; cursor: pointer; border-radius: 2rem;";
                     localStorage.setItem("theme", "light");
                 }
             }
+            /** Theme night **/
             else {
-                document.body.style.cssText = "font-size: 3rem; background-color: #494949FF; color: #FAFAFAFF"
                 localStorage.setItem("theme", "dark");
-                this.button.style.cssText = "position: absolute; top: 2rem; right: 2rem; width: 50px; height: 50px; background-color: #FAFAFAFF; cursor: pointer; border-radius: 2rem;";
+                document.body.style.cssText = "font-size: 3rem; background-color: black; color: #FAFAFAFF";
+                this.button.style.cssText = "position: absolute; top: 2rem; right: 2rem; width: 50px; height: 50px; background-color: white; cursor: pointer; border-radius: 2rem;";
+                this.mode.style.cssText = "margin-top: 9px; display: flex; justify-content: center; align-items: center; align-content: center; color: black;";
             }
         })
     }

@@ -25,7 +25,7 @@ class Article {
      * @param source
      */
     init(title, content, author, date, img, source) {
-        this.divContainer.className = "divArticle visible";
+        this.divContainer.className = "divArticle-show";
         if(img === null) {
             img = "./build/img/default.png";
         }

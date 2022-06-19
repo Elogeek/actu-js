@@ -15,7 +15,7 @@ class Articles {
     }
 
     /**
-     * Init the div container
+     * Init the divContainer
      * @param divContainer
      */
     init(divContainer) {
@@ -53,7 +53,7 @@ class Articles {
     }
 
     /**
-     * Adapt the container for one article
+     * Adaptation of the container for the display of an article
      */
     viewArticle() {
         let divArticle = document.querySelectorAll(".divArticle");
@@ -77,23 +77,23 @@ class Articles {
     }
 
     /**
-     *
-     * @param e
+     * Manages the animation (appearance, deletion) when clicking on an article
+     * @param event
      * @param divArticle
-     * @param p
+     * @param articleContent
      * @param width
      */
-    animation(e, divArticle, p, width) {
+    animation(event, divArticle, articleContent, width) {
         if(this.check === true) {
             this.check = false;
             if(this.expanded === false) {
                 this.scrollY = window.scrollY;
             }
 
-            divArticle.forEach(function (b) {
+            divArticle.forEach(function (displayArticle) {
 
-                if(b !== e && b.className === "divArticle visible") {
-                    b.animate(
+                if(displayArticle !== event && displayArticle.className === "divArticle-show") {
+                    displayArticle.animate(
                         [
                             {
                                 opacity: 0,
@@ -107,14 +107,14 @@ class Articles {
                         }
                     )
                     setTimeout(function () {
-                        b.style.display = "none";
-                        b.className = "divArticle hidden";
+                        displayArticle.style.display = "none";
+                        displayArticle.className = "divArticle-hidden";
                     }, 500);
                 }
-                else if(b !== e) {
-                    b.style.display = "flex";
-                    b.className = "divArticle visible";
-                    b.animate([
+                else if(displayArticle !== event) {
+                    displayArticle.style.display = "flex";
+                    displayArticle.className = "divArticle-show";
+                    displayArticle.animate([
                             {
                                 opacity: 1,
                                 easing: 'ease-in',
@@ -129,9 +129,9 @@ class Articles {
                 }
                 else {
                     if(window.matchMedia("(min-width: 700px)").matches) {
-                        if(b.className === "divArticle visible") {
-                            b.firstChild.childNodes[2].after(p);
-                            b.animate([
+                        if(displayArticle.className === "divArticle-show") {
+                            displayArticle.firstChild.childNodes[2].after(articleContent);
+                            displayArticle.animate([
                                     {
                                         width: "90%",
                                         easing: 'ease-in',
@@ -143,11 +143,11 @@ class Articles {
                                     fill: "forwards",
                                 }
                             );
-                            b.className = "divArticle visible view";
+                            displayArticle.className = "divArticle-show-view";
                         }
                         else {
-                            b.firstChild.childNodes[3].remove();
-                            b.animate([
+                            displayArticle.firstChild.childNodes[3].remove();
+                            displayArticle.animate([
                                     {
                                         width: width,
                                         easing: 'ease-in',
@@ -159,18 +159,18 @@ class Articles {
                                     fill: "forwards",
                                 }
                             );
-                            b.className = "divArticle visible";
+                            displayArticle.className = "divArticle-show";
                         }
 
                     }
                     else {
-                        if(b.className === "divArticle visible") {
-                            b.firstChild.childNodes[2].after(p);
-                            b.className = "divArticle visible view";
+                        if(displayArticle.className === "divArticle-show") {
+                            displayArticle.firstChild.childNodes[2].after(articleContent);
+                            displayArticle.className = "divArticle-show-view";
                         }
                         else {
-                            b.firstChild.childNodes[3].remove();
-                            b.className = "divArticle visible";
+                            displayArticle.firstChild.childNodes[3].remove();
+                            displayArticle.className = "divArticle-show";
                         }
                     }
                 }
