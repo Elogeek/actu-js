@@ -1,4 +1,4 @@
-import {faSun} from "@fortawesome/free-solid-svg-icons";
+import '@fortawesome/fontawesome-free/js/all.js';
 
 class ButtonMode {
 
@@ -7,7 +7,7 @@ class ButtonMode {
      */
     constructor() {
         this.button = document.createElement("div");
-        this.mode = document.createElement("i");
+        this.modeNigth = document.createElement("i");
     }
 
     /**
@@ -16,7 +16,7 @@ class ButtonMode {
      */
     init(divContainer) {
         this.button.style.cssText = "position: absolute; top: 2rem; right: 2rem; width: 50px; height: 50px; background-color: black; cursor: pointer; border-radius: 2rem; text-align: center;";
-        this.mode.className = {faSun};
+        this.modeNigth.innerHTML = "<i class=\"fas fa-sun\"></i>";
 
         divContainer.appendChild(this.button);
         this.button.appendChild(this.mode);
@@ -62,3 +62,4 @@ class ButtonMode {
 }
 
 export {ButtonMode};
+
