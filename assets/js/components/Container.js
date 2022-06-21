@@ -1,7 +1,7 @@
 import {Header} from "./Header";
 import {Footer} from "./Footer";
 import {Articles} from "./Articles";
-import {ButtonMode} from "./ButtonMode";
+import {Theme} from "./Theme";
 
 class Container {
 
@@ -13,7 +13,7 @@ class Container {
         this.header = new Header();
         this.footer = new Footer();
         this.article = new Articles();
-        this.button = new ButtonMode();
+        this.button = new Theme();
     }
 
     /**
@@ -26,7 +26,7 @@ class Container {
         this.article.init(this.divContainer);
         this.footer.init(this.divContainer);
         this.button.init(this.divContainer);
-        this.button.click();
+        this.button.choiceMode();
 
     }
 }

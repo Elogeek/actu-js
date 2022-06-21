@@ -18,11 +18,11 @@ body {
 }
 
  /** Design Articles **/
-.divArticles {
+#divArticles {
     width: 100%;
 }
 
-.divArticle-show {
+.article_show {
     display: flex;
     flex-wrap: nowrap;
     margin: 2rem auto;
@@ -32,11 +32,11 @@ body {
     width: 65%;
 }
 
-.divArticle-show h2 {
+.article_show h2 {
     font-family: 'Murecho', sans-serif;
 }
 
-.divArticle p:first-child {
+.article_show p:first-child {
     font-family: 'Gideon Roman', cursive;
 }
 

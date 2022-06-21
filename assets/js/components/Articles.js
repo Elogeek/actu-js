@@ -15,7 +15,7 @@ class Articles {
     }
 
     /**
-     * Init the divContainer
+     * Init the divContainer (divArticles)
      * @param divContainer
      */
     init(divContainer) {
@@ -34,10 +34,10 @@ class Articles {
         })
             .done(data => {
                 let dataArticles = data.data;
-                dataArticles.sort(function compare(dataA, dataB) {
-                    if (dataA.published_at < dataB.published_at)
+                dataArticles.sort(function compare(dataA, dataY) {
+                    if (dataA.published_at < dataY.published_at)
                         return -1;
-                    if (dataA.published_at > dataB.published_at )
+                    if (dataA.published_at > dataY.published_at )
                         return 1;
                     return 0;
                 }).reverse();
@@ -47,7 +47,7 @@ class Articles {
                     article.init(event.title, event.description, event.author, event.published_at, event.image, event.source);
                 })
 
-                this.viewArticle();
+                this.showArticle();
 
             });
     }
@@ -55,45 +55,45 @@ class Articles {
     /**
      * Adaptation of the container for the display of an article
      */
-    viewArticle() {
-        let divArticle = document.querySelectorAll(".divArticle");
-        let p = document.createElement("p");
-        let width = divArticle[0].style.width;
+    showArticle() {
+        let myArticle = document.querySelectorAll(".article");
+        let contentArticle = document.createElement("p");
+        let width = myArticle[0].style.width;
 
         window.addEventListener('resize', function () {
-            width = divArticle[0].style.width;
+            width = myArticle[0].style.width;
         }, false);
 
-        p.style.cssText = "font-size: 2.8rem; padding: 4rem 3rem";
-
-        p.innerHTML =
+        /** Design and content of the articles */
+        contentArticle.style.cssText = "font-size: 2.8rem; padding: 4rem 3rem";
+        contentArticle.innerHTML =
             loremIpsum({
                 count: 5,
                 paragraphLowerBound: 3,
                 paragraphUpperBound: 7,
             });
 
-        divArticle.forEach( e => e.addEventListener("click", () => this.animation(e, divArticle, p, width)));
+        myArticle.forEach( event => event.addEventListener("click", () => this.startDisplayArticle(event, myArticle, contentArticle, width)));
     }
 
     /**
      * Manages the animation (appearance, deletion) when clicking on an article
      * @param event
-     * @param divArticle
-     * @param articleContent
+     * @param myArticle
+     * @param contentArticle
      * @param width
      */
-    animation(event, divArticle, articleContent, width) {
+    startDisplayArticle(event, myArticle, contentArticle, width) {
         if(this.check === true) {
             this.check = false;
             if(this.expanded === false) {
                 this.scrollY = window.scrollY;
             }
 
-            divArticle.forEach(function (displayArticle) {
+            myArticle.forEach(function (x) {
 
-                if(displayArticle !== event && displayArticle.className === "divArticle-show") {
-                    displayArticle.animate(
+                if(x !== event && x.className === "article_show") {
+                   x.animate(
                         [
                             {
                                 opacity: 0,
@@ -107,14 +107,14 @@ class Articles {
                         }
                     )
                     setTimeout(function () {
-                        displayArticle.style.display = "none";
-                        displayArticle.className = "divArticle-hidden";
+                        x.style.display = "none";
+                        x.className = "article_hidden";
                     }, 500);
                 }
-                else if(displayArticle !== event) {
-                    displayArticle.style.display = "flex";
-                    displayArticle.className = "divArticle-show";
-                    displayArticle.animate([
+                else if(x !== event) {
+                    x.style.display = "flex";
+                    x.className = "article_show";
+                    x.animate([
                             {
                                 opacity: 1,
                                 easing: 'ease-in',
@@ -129,9 +129,9 @@ class Articles {
                 }
                 else {
                     if(window.matchMedia("(min-width: 700px)").matches) {
-                        if(displayArticle.className === "divArticle-show") {
-                            displayArticle.firstChild.childNodes[2].after(articleContent);
-                            displayArticle.animate([
+                        if(x.className === "article_show") {
+                           x.firstChild.childNodes[2].after(contentArticle);
+                            x.animate([
                                     {
                                         width: "90%",
                                         easing: 'ease-in',
@@ -143,11 +143,11 @@ class Articles {
                                     fill: "forwards",
                                 }
                             );
-                            displayArticle.className = "divArticle-show-view";
+                            x.className = "article_show_single";
                         }
                         else {
-                            displayArticle.firstChild.childNodes[3].remove();
-                            displayArticle.animate([
+                            x.firstChild.childNodes[3].remove();
+                            x.animate([
                                     {
                                         width: width,
                                         easing: 'ease-in',
@@ -159,18 +159,18 @@ class Articles {
                                     fill: "forwards",
                                 }
                             );
-                            displayArticle.className = "divArticle-show";
+                            x.className = "article_show";
                         }
 
                     }
                     else {
-                        if(displayArticle.className === "divArticle-show") {
-                            displayArticle.firstChild.childNodes[2].after(articleContent);
-                            displayArticle.className = "divArticle-show-view";
+                        if(x.className === "article_show") {
+                            x.firstChild.childNodes[2].after(contentArticle);
+                            x.className = "article_show_single";
                         }
                         else {
-                            displayArticle.firstChild.childNodes[3].remove();
-                            displayArticle.className = "divArticle-show";
+                            x.firstChild.childNodes[3].remove();
+                            x.className = "article_show";
                         }
                     }
                 }

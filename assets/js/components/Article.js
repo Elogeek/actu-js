@@ -25,11 +25,14 @@ class Article {
      * @param source
      */
     init(title, content, author, date, img, source) {
-        this.divContainer.className = "divArticle-show";
+
+        // If there is no image on the article then the default img is displayed
+        this.divContainer.className = "article_show";
         if(img === null) {
             img = "./build/img/default.png";
         }
 
+        // If there is no author on the article then the default author is displayed
         if(author === null) {
             author = "Anonymous";
         }
