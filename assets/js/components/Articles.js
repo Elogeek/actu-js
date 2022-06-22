@@ -53,7 +53,7 @@ class Articles {
     }
 
     /**
-     * Adaptation of the container for the display of an article
+     * Content adaptation of the article
      */
     showArticle() {
         let myArticle = document.querySelectorAll(".article");
@@ -92,7 +92,7 @@ class Articles {
 
             myArticle.forEach(function (dataX) {
 
-                if(dataX !== event && dataX.className === "article_show") {
+                if(dataX !== event && dataX.className === "article") {
                    dataX.animate(
                         [
                             {
@@ -113,7 +113,7 @@ class Articles {
                 }
                 else if(dataX !== event) {
                     dataX.style.display = "flex";
-                    dataX.className = "article_show";
+                    dataX.className = "article";
                     dataX.animate([
                             {
                                 opacity: 1,
@@ -129,7 +129,7 @@ class Articles {
                 }
                 else {
                     if(window.matchMedia("(min-width: 700px)").matches) {
-                        if(dataX.className === "article_show") {
+                        if(dataX.className === "article") {
                            dataX.firstChild.childNodes[2].after(contentArticle);
                             dataX.animate([
                                     {
@@ -143,7 +143,7 @@ class Articles {
                                     fill: "forwards",
                                 }
                             );
-                            dataX.className = "article_show_single";
+                            dataX.className = "article_show";
                         }
                         else {
                             dataX.firstChild.childNodes[3].remove();
@@ -159,18 +159,18 @@ class Articles {
                                     fill: "forwards",
                                 }
                             );
-                            dataX.className = "article_show";
+                            dataX.className = "article";
                         }
 
                     }
                     else {
-                        if(dataX.className === "article_show") {
+                        if(dataX.className === "article") {
                             dataX.firstChild.childNodes[2].after(contentArticle);
-                            dataX.className = "article_show_single";
+                            dataX.className = "article";
                         }
                         else {
                             dataX.firstChild.childNodes[3].remove();
-                            dataX.className = "article_show";
+                            dataX.className = "article";
                         }
                     }
                 }

@@ -27,7 +27,7 @@ class Article {
     init(title, content, author, date, img, source) {
 
         // If there is no image on the article then the default img is displayed
-        this.divContainer.className = "article_show";
+        this.divContainer.className = "article";
         if(img === null) {
             img = "./build/img/default.png";
         }
