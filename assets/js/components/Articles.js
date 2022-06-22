@@ -34,10 +34,10 @@ class Articles {
         })
             .done(data => {
                 let dataArticles = data.data;
-                dataArticles.sort(function compare(dataA, dataY) {
-                    if (dataA.published_at < dataY.published_at)
+                dataArticles.sort(function compare(dataA, dataX) {
+                    if (dataA.published_at < dataX.published_at)
                         return -1;
-                    if (dataA.published_at > dataY.published_at )
+                    if (dataA.published_at > dataX.published_at )
                         return 1;
                     return 0;
                 }).reverse();
@@ -90,10 +90,10 @@ class Articles {
                 this.scrollY = window.scrollY;
             }
 
-            myArticle.forEach(function (x) {
+            myArticle.forEach(function (dataX) {
 
-                if(x !== event && x.className === "article_show") {
-                   x.animate(
+                if(dataX !== event && dataX.className === "article_show") {
+                   dataX.animate(
                         [
                             {
                                 opacity: 0,
@@ -107,14 +107,14 @@ class Articles {
                         }
                     )
                     setTimeout(function () {
-                        x.style.display = "none";
-                        x.className = "article_hidden";
+                        dataX.style.display = "none";
+                        dataX.className = "article_hidden";
                     }, 500);
                 }
-                else if(x !== event) {
-                    x.style.display = "flex";
-                    x.className = "article_show";
-                    x.animate([
+                else if(dataX !== event) {
+                    dataX.style.display = "flex";
+                    dataX.className = "article_show";
+                    dataX.animate([
                             {
                                 opacity: 1,
                                 easing: 'ease-in',
@@ -129,9 +129,9 @@ class Articles {
                 }
                 else {
                     if(window.matchMedia("(min-width: 700px)").matches) {
-                        if(x.className === "article_show") {
-                           x.firstChild.childNodes[2].after(contentArticle);
-                            x.animate([
+                        if(dataX.className === "article_show") {
+                           dataX.firstChild.childNodes[2].after(contentArticle);
+                            dataX.animate([
                                     {
                                         width: "90%",
                                         easing: 'ease-in',
@@ -143,11 +143,11 @@ class Articles {
                                     fill: "forwards",
                                 }
                             );
-                            x.className = "article_show_single";
+                            dataX.className = "article_show_single";
                         }
                         else {
-                            x.firstChild.childNodes[3].remove();
-                            x.animate([
+                            dataX.firstChild.childNodes[3].remove();
+                            dataX.animate([
                                     {
                                         width: width,
                                         easing: 'ease-in',
@@ -159,18 +159,18 @@ class Articles {
                                     fill: "forwards",
                                 }
                             );
-                            x.className = "article_show";
+                            dataX.className = "article_show";
                         }
 
                     }
                     else {
-                        if(x.className === "article_show") {
-                            x.firstChild.childNodes[2].after(contentArticle);
-                            x.className = "article_show_single";
+                        if(dataX.className === "article_show") {
+                            dataX.firstChild.childNodes[2].after(contentArticle);
+                            dataX.className = "article_show_single";
                         }
                         else {
-                            x.firstChild.childNodes[3].remove();
-                            x.className = "article_show";
+                            dataX.firstChild.childNodes[3].remove();
+                            dataX.className = "article_show";
                         }
                     }
                 }
