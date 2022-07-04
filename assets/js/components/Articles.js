@@ -28,6 +28,7 @@ class Articles {
                 access_key: '6e6daf070179498ad3531d057e9946b0',
                 languages: 'fr,-en',
                 countries: 'fr,jp',
+                keyword: 'Japan',
                 limit: 20,
                 offset: 20,
             }
