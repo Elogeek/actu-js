@@ -14,7 +14,17 @@ class Theme {
      * @param divContainer
      */
     init(divContainer) {
-        this.button.style.cssText = "position: absolute; top: 2rem; right: 2rem; width: 33px; height: 33px; background-color: black; color: white; text-align: center; cursor: pointer; border-radius: 2rem;";
+        this.button.style.cssText = "" +
+            "position: absolute; " +
+            "top: 2rem; right: 2rem;" +
+            " width: 33px; " +
+            "height: 33px; " +
+            "background-color: black; " +
+            "color: white; " +
+            "text-align: center; " +
+            "cursor: pointer; " +
+            "border-radius: 2rem;" +
+        "";
 
         divContainer.appendChild(this.button);
 
@@ -22,11 +32,33 @@ class Theme {
         if(localStorage.getItem("theme")) {
             if(localStorage.getItem("theme") === "light") {
                 document.body.style.cssText = "font-size: 3rem; background-color: white; color: #494949FF"
-                this.button.style.cssText = "position: absolute; top: 2rem; right: 2rem; width: 33px; height: 33px; background-color: black; color: white; text-align: center; cursor: pointer; border-radius: 2rem;";
+                this.button.style.cssText =
+                    "position: absolute; " +
+                    "top: 2rem; " +
+                    "right: 2rem; " +
+                    "width: 33px; " +
+                    "height: 33px; " +
+                    "background-color: black; " +
+                    "color: white; " +
+                    "text-align: center; " +
+                    "cursor: pointer; " +
+                    "border-radius: 2rem;" +
+                "";
             }
             else {
                 document.body.style.cssText = "font-size: 3rem; background-color: black; color: #FAFAFAFF";
-                this.button.style.cssText = "position: absolute; top: 2rem; right: 2rem; width: 33px; height: 33px; background-color: white; color: black; cursor: pointer; border-radius: 2rem; text-align: center;";
+                this.button.style.cssText =
+                    "position: absolute; " +
+                    "top: 2rem; " +
+                    "right: 2rem; " +
+                    "width: 33px; " +
+                    "height: 33px; " +
+                    "background-color: white; " +
+                    "color: black; " +
+                    "cursor: pointer; " +
+                    "border-radius: 2rem; " +
+                    "text-align: center;" +
+                "";
 
             }
         }
@@ -37,18 +69,39 @@ class Theme {
      */
     choiceMode() {
         this.button.addEventListener("click", () => {
-            console.log("ok");
             if(localStorage.getItem("theme")) {
                 /** Theme night **/
                 if(localStorage.getItem("theme") === "light") {
                     document.body.style.cssText = "font-size: 3rem; background-color: black; color: white";
-                    this.button.style.cssText = "position: absolute; top: 2rem; right: 2rem; width: 33px; height: 33px; background-color: white; color: black; text-align: center; cursor: pointer; border-radius: 2rem;";
+                    this.button.style.cssText =
+                        "position: absolute; " +
+                        "top: 2rem; " +
+                        "right: 2rem; " +
+                        "width: 33px; " +
+                        "height: 33px; " +
+                        "background-color: white; " +
+                        "color: black; " +
+                        "text-align: center; " +
+                        "cursor: pointer; " +
+                        "border-radius: 2rem;" +
+                    "";
                     localStorage.setItem("theme", "dark");
                 }
                 /** Theme light **/
                 else {
                     document.body.style.cssText = "font-size: 3rem; background-color: white; color: black";
-                    this.button.style.cssText = "position: absolute; top: 2rem; right: 2rem; width: 33px; height: 33px; background-color: black; color: white; text-align: center; cursor: pointer; border-radius: 2rem;";
+                    this.button.style.cssText =
+                        "position: absolute; " +
+                        "top: 2rem; " +
+                        "right: 2rem; " +
+                        "width: 33px; " +
+                        "height: 33px; " +
+                        "background-color: black; " +
+                        "color: white; " +
+                        "text-align: center; " +
+                        "cursor: pointer; " +
+                        "border-radius: 2rem;" +
+                    "";
                     localStorage.setItem("theme", "light");
                 }
             }
@@ -56,7 +109,18 @@ class Theme {
             else {
                 localStorage.setItem("theme", "dark");
                 document.body.style.cssText = "font-size: 3rem; background-color: black; color: white";
-                this.button.style.cssText = "position: absolute; top: 2rem; right: 2rem; width: 33px; height: 33px; background-color: white; color: black; text-align: center; cursor: pointer; border-radius: 2rem;";
+                this.button.style.cssText =
+                    "position: absolute; " +
+                    "top: 2rem; " +
+                    "right: 2rem; " +
+                    "width: 33px; " +
+                    "height: 33px; " +
+                    "background-color: white; " +
+                    "color: black; " +
+                    "text-align: center; " +
+                    "cursor: pointer; " +
+                    "border-radius: 2rem;" +
+                "";
             }
         })
     }
