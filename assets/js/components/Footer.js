@@ -12,7 +12,7 @@ class Footer {
      * @param divContainer
      */
     init(divContainer) {
-        this.footer.innerHTML = "By Elogeek";
+        this.footer.innerHTML = "© Copyright By Elogeek  ";
         this.footer.className = "Footer";
         divContainer.appendChild(this.footer);
     }
