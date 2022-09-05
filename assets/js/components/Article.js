@@ -80,22 +80,22 @@ class Article {
             if(window.matchMedia("(min-width: 1300px)").matches) {
                 return div.style.cssText =
                     "display: flex; flex-wrap: nowrap; margin: 2rem auto; border: 1px solid darkgrey;" +
-                    "border-radius: 5px; cursor: pointer; width: 50%;";
+                    "border-radius: 2.5rem; cursor: pointer; width: 50%;";
             }
             else if(window.matchMedia("(min-width: 1000px)").matches) {
                 return div.style.cssText =
                     "display: flex; flex-wrap: nowrap; margin: 2rem auto; border: 1px solid darkgrey;" +
-                    "border-radius: 5px; cursor: pointer; width: 65%;";
+                    "border-radius: 2.5rem; cursor: pointer; width: 65%;";
             }
             else if(window.matchMedia("(min-width: 700px)").matches) {
                 return div.style.cssText =
                     "display: flex; flex-wrap: nowrap; margin: 2rem auto; border: 1px solid darkgrey;" +
-                    "border-radius: 5px; cursor: pointer; width: 85%;";
+                    "border-radius: 2.5rem; cursor: pointer; width: 85%;";
             }
             else {
                 return div.style.cssText =
                     "display: flex; flex-wrap: nowrap; margin: 2rem auto; border: 1px solid darkgrey;" +
-                    "border-radius: 5px; cursor: pointer; width: 95%;";
+                    "border-radius: 2.5rem; cursor: pointer; width: 95%;";
             }
         }
     }

@@ -21,6 +21,9 @@ body {
 #divArticles {
     width: 100%;
 }
+.article {
+    border-radius: 2.5rem;
+}
 
 .article_show {
     display: flex;
