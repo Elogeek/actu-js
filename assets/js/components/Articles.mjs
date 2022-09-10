@@ -1,5 +1,5 @@
 import $ from "jquery";
-import {Article} from "./Article";
+import {Article} from "./Article.mjs";
 import { loremIpsum } from "lorem-ipsum";
 
 class Articles {

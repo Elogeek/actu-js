@@ -1,5 +1,5 @@
 import "../css/style.css";
-import {Container} from "./components/Container";
+import {Container} from "./components/Container.mjs";
 import "../img/default.png";
 import "../img/logo.png"
 

@@ -1,7 +1,7 @@
-import {Header} from "./Header";
-import {Footer} from "./Footer";
-import {Articles} from "./Articles";
-import {Theme} from "./Theme";
+import {Header} from "./Header.mjs";
+import {Footer} from "./Footer.mjs";
+import {Articles} from "./Articles.mjs";
+import {Theme} from "./Theme.mjs";
 
 class Container {
 
