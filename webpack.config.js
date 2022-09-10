@@ -93,7 +93,7 @@ function prodConfig() {
                     options: {
                         presets: ['@babel/preset-env'],
                         plugins: ['@babel/plugin-proposal-object-rest-spread'],
-                        exclude: ['/specs']
+                        exclude: ['/assets/specs']
                     }
                 },
             ]
